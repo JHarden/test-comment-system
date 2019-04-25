@@ -31,7 +31,7 @@ export function reducers(state: StoreState, action: any) {
                     title: action.title, 
                     body: action.body, 
                     date: action.date, 
-                    votes: action.vodes,
+                    votes: 1,
                     comments: []
                 }]
             };

@@ -39,10 +39,16 @@ const FlexContainer = styled.div`
     display: flex;
 `
 
+const CommentListWrapper = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+`
 const BodyContent = styled.p`
-    padding: 20px;
+    padding: 10px 20px 20px;
     text-align: left;
     line-height: 1.5;
+    margin-top: 0;
 `
 
 const ArticleHeader = styled.div`
@@ -56,9 +62,17 @@ const ArticleHeader = styled.div`
     >h2 {
         margin-top: 5px;
         font-weight: normal;
-        font-size: 22px;
+        font-size: 20px;
     }
 `;
+
+const CommentList = styled.div`
+    display: flex;
+    min-width: 15%;
+    font-size: 14px;
+    padding-bottom: 10px;
+    justify-content: flex-end;
+`
 class ReadOnlyArticle extends React.Component<ReadOnlyArticleProps, ReadOnlyUIState> {
 
     private toggle = () => {
@@ -76,7 +90,7 @@ class ReadOnlyArticle extends React.Component<ReadOnlyArticleProps, ReadOnlyUISt
     }
 
     render() {
-        const { id, author, title, body, votes, showMore, hasVoted, isLoggedIn } = this.props;
+        const { id, author, title, body, votes, showMore, hasVoted, isLoggedIn, comments } = this.props;
         return (
             <StyledArticle>
                 <FlexContainer>
@@ -86,17 +100,20 @@ class ReadOnlyArticle extends React.Component<ReadOnlyArticleProps, ReadOnlyUISt
                         <h2>{title}</h2>
                     </ArticleHeader>
                 </FlexContainer>
+                <CommentListWrapper>                    
+                    <CommentList>{comments.length} comments</CommentList>
+                </CommentListWrapper>
                 {
-                        showMore ?
+                    showMore ?
+                        <div>
+                            <BodyContent>
+                                {body}
+                            </BodyContent>
                             <div>
-                                <BodyContent>
-                                    {body}
-                                </BodyContent>
-                                <div>
-                                    {this.getComments()}
-                                </div>
-                            </div> : ''
-                    }
+                                {this.getComments()}
+                            </div>
+                        </div> : ''
+                }
             </StyledArticle>
         )
     }

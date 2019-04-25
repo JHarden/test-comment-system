@@ -6,8 +6,51 @@ export interface CreateArticleProps {
 }
 
 const StyledArticle = styled.div`
-    background: white;
+    background: #eaeaea;
+    margin: 20px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 `;
+
+
+const StyledArticleInput = styled.input`
+    font-size: 14px;
+    min-width: 50%;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    margin: 20px;
+`
+
+const StyledTextArea = styled.textarea`
+    font-size: 14px;
+    min-width: 50%;
+    height: 80px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    margin: 20px;
+`
+const SubmitArticleButton = styled.button`
+    font-size: 20px;
+    padding: 20px;
+    background: #4ca4ff;
+    left: 20px;
+    border-radius: 5px;
+    color: #fff;
+    width: auto;
+    height: 35px;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    margin: 20px 20px 20px 0;
+    line-height: 0.1;
+`;
+
 
 class CreateArticle extends React.Component<CreateArticleProps, {}> {
 
@@ -30,11 +73,9 @@ class CreateArticle extends React.Component<CreateArticleProps, {}> {
     render() {
         return(
             <StyledArticle>  
-                <input type='text' name='title' onChange={this.handleTitleChange}></input>
-                <div>
-                    <textarea name='body' onChange={this.handleBodyChange}></textarea>
-                </div>
-                <button onClick={this.onSubmit}>Submit</button>
+                <StyledArticleInput type='text' name='title' placeholder={'enter a title...'}onChange={this.handleTitleChange}></StyledArticleInput>
+                <StyledTextArea name='body' placeholder={'enter some text...'} onChange={this.handleBodyChange}></StyledTextArea>
+                <SubmitArticleButton onClick={this.onSubmit}>Submit</SubmitArticleButton>
             </StyledArticle>
         )
     }

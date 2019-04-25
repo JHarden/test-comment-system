@@ -73,7 +73,7 @@ export const INITIAL_STATE: StoreState = {
             author: 'Xavier Barns',
             date: 'Today',
             title: 'Why ‘Anonymized Data’ Isn’t So Anonymous',
-            votes: 120,
+            votes: 119,
             showMore: false,
             hasVoted: false,
             body: `2015, Latanya Sweeney, a researcher who studies data anonymization and privacy, published research specifically targeting the deanonymization of HIPAA-protected data in Washington. In that state, (and many others), it is possible for companies and individuals to purchase anonymized medical record data. Sweeney purchased data through legal channels that included, as she noted, “virtually all hospitalizations occurring in the state in a given year” and myriad details about those hospital visits, including diagnoses, procedures, the attending physician, a summary of charges, how the bill was paid, and more. The records were anonymous in that they did not contain the patients’ name or address, but they did include patients’ five-digit U.S. postal codes.`,

@@ -8,8 +8,41 @@ export interface LoginProps {
 
 const StyledLogin = styled.div`
     background: #dedcdc;
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+    margin: 20px;
 `;
 
+const StyledLoginInput = styled.input`
+    font-size: 14px;
+    min-width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    padding: 0 10px;
+`
+const LoginButton = styled.button`
+    font-size: 20px;
+    padding: 5px 0;
+    background: #4ca4ff;
+    position: relative;
+    left: 20px;
+    border-radius: 5px;
+    color: #fff;
+    width: 60px;
+    height: 35px;
+    cursor: pointer;
+    position: relative;
+    top: 3px;
+`;
+
+const WelcomeMessage = styled.div`
+    color: grey;
+    font-size: 22px;
+
+`
 class Login extends React.Component<LoginProps, {}> {
 
     private userName: string = '';
@@ -28,12 +61,10 @@ class Login extends React.Component<LoginProps, {}> {
             <StyledLogin>
                 {
                     userName ?
-                        <div>Hello {userName}
-                        </div> :
+                        <WelcomeMessage>Hello {userName}</WelcomeMessage> :
                         <div>
-                            <p>Login</p>
-                            <input type='text' onChange={this.handleChange}></input>
-                            <button onClick={this.handleLogin}>click me</button>
+                            <StyledLoginInput type='text' onChange={this.handleChange}></StyledLoginInput>
+                            <LoginButton onClick={this.handleLogin}>login</LoginButton>
                         </div>
                 }
             </StyledLogin>

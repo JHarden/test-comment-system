@@ -24,7 +24,7 @@ const Avatar = styled.div`
 const CommentBody = styled.div`
     display: flex;
     flex-direction: column;
-    padding-left: 20px;
+    padding-left: 18px;
     align-items: flex-start;
     max-width: 80%;
     text-align: left;
@@ -32,8 +32,9 @@ const CommentBody = styled.div`
 `;
 
 const CommentText = styled.div`
-    font-size: 20px;
+    font-size: 16px;
     padding: 5px 0;
+    line-height: 1.5;
 `;
 
 const CommentAuthor = styled.div`
