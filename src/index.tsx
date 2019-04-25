@@ -5,23 +5,20 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import { createStore } from 'redux';
-import {doLogin} from './reducers/index';
-import { StoreState } from './types/index';
+import { doLogin } from './reducers/index';
 import { Provider } from 'react-redux';
 import { LoginAction } from './actions';
+import { INITIAL_STATE } from './mocks';
 
 declare var window: any;
 
-const initialState = {
-    userName: 'default'
-}
-/* tslint-disable */
-const store = createStore<LoginAction, any, any, any>( 
-    doLogin as any, 
+const initialState = INITIAL_STATE;
+
+const store = createStore<LoginAction, any, any, any>(
+    doLogin as any,
     initialState as any,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
-/* tslint-enable */
 
 
 ReactDOM.render(
