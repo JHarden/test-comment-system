@@ -2,6 +2,8 @@ import React from "react";
 import Comment from "./Comment";
 import { IComment } from "../types";
 import CreateComment from "./CreateComment";
+import Vote from "./Vote";
+import VoteContainer from "../containers/VoteContainer";
 
 export interface ReadOnlyArticleProps {
     id: number;
@@ -12,9 +14,7 @@ export interface ReadOnlyArticleProps {
     comments: IComment[];
     showMore: boolean;
     onShowMore: (value: boolean, id: number) => void;
-    // userName: boolean;
-    // onAddComment: () => Comment;
-    // onCreateComment: () => Comment;
+    hasVoted: boolean;
 }
 
 export interface ReadOnlyUIState {
@@ -44,24 +44,26 @@ class ReadOnlyArticle extends React.Component<ReadOnlyArticleProps, ReadOnlyUISt
     }
 
     render() {
-        const { author, title, body, votes, comments, showMore } = this.props;
+        const { id, author, title, body, votes, showMore, hasVoted } = this.props;
         return (
-            <div style={divStyle} onClick={this.toggle}>
-                <div>votes:{votes}</div>
-                <div>by: {author} </div>
-                <h2>{title}</h2>
-                {
-                    showMore ?
-                        <div>
+            <div>
+                <VoteContainer articleId={id} votes={votes} hasVoted={hasVoted}></VoteContainer>
+                <div style={divStyle} onClick={this.toggle}>
+                    <div>by: {author} </div>
+                    <h2>{title}</h2>
+                    {
+                        showMore ?
                             <div>
-                                {body}
-                            </div>
-                            <div>
-                                {this.getComments()}
-                            </div>
-                        </div> : ''
-                }
-            </div >
+                                <div>
+                                    {body}
+                                </div>
+                                <div>
+                                    {this.getComments()}
+                                </div>
+                            </div> : ''
+                    }
+                </div >
+            </div>
         )
     }
 }

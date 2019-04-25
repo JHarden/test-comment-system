@@ -1,6 +1,6 @@
 import { StoreState } from "../types";
 import { LoginAction } from "../actions";
-import { LOGIN, SHOW_MORE, ADD_COMMENT, TOGGLE_ADD_ARTICLE, ADD_ARTICLE } from "../constants";
+import { LOGIN, SHOW_MORE, ADD_COMMENT, TOGGLE_ADD_ARTICLE, ADD_ARTICLE, VOTE } from "../constants";
 
 export function reducers(state: StoreState, action: any) {
     switch (action.type) {
@@ -35,6 +35,13 @@ export function reducers(state: StoreState, action: any) {
                     comments: []
                 }]
             };
+        case VOTE:
+            return {
+                ...state, articles: state.articles.map((_article, idx) => {
+                    return  _article.id === action.articleId ? 
+                         { ..._article, votes: action.votes, hasVoted: true}
+                         : _article
+                 })            };
         default:
             return { ...state }
     }

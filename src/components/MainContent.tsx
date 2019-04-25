@@ -51,6 +51,7 @@ class MainContent extends React.Component<MainContentProps, {}> {
                                         body={article.body}
                                         votes={article.votes}
                                         showMore={article.showMore}
+                                        hasVoted={article.hasVoted}
                                         comments={article.comments}
                                         key={index}>
                                     </ReadOnlyArticleContainer>

@@ -17,3 +17,6 @@ export type ADD_ARTICLE = typeof ADD_ARTICLE;
 
 export const TOGGLE_ADD_ARTICLE = 'TOGGLE_ADD_ARTICLE';
 export type TOGGLE_ADD_ARTICLE = typeof TOGGLE_ADD_ARTICLE;
+
+export const VOTE = 'VOTE';
+export type VOTE = typeof VOTE;

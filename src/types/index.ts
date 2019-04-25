@@ -13,6 +13,7 @@ export interface IArticle {
     votes: number;
     showMore: boolean;
     comments: IComment[];
+    hasVoted: boolean;
 }
 
 export interface IComment {

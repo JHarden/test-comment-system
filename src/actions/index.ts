@@ -4,6 +4,11 @@ export interface Login {
     type: constants.LOGIN,
     userName: string
 }
+export interface Vote {
+    type: constants.VOTE,
+    votes: number,
+    articleId: number
+}
 export interface GetArticles {
     type: constants.GET_ARTICLES
 }
@@ -36,6 +41,7 @@ export type LoginAction = Login;
 export type GetArticlesAction = GetArticles;
 export type ShowMoreAction = ShowMore;
 export type AddCommentAction = AddComment;
+export type VoteAction = Vote;
 
 export function login(value: string): Login {
     return {
@@ -81,5 +87,13 @@ export function ToggleAddArticle(isCreatingArticle: boolean): ToggleAddArticle {
     return {
         type: constants.TOGGLE_ADD_ARTICLE,
         isCreatingArticle
+    }
+}
+
+export function VoteOnArticle(votes: number, articleId: number): Vote {
+    return {
+        type: constants.VOTE,
+        votes,
+        articleId
     }
 }

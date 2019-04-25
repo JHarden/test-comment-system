@@ -11,6 +11,7 @@ export const INITIAL_STATE: StoreState = {
             title: 'The React Handbook',
             votes: 17,
             showMore: false,
+            hasVoted: false,
             body: `An introduction to the React view library
             What is React?
             React is a JavaScript library that aims to simplify development of visual interfaces.
@@ -41,6 +42,7 @@ export const INITIAL_STATE: StoreState = {
             title: 'Researchers Are Translating Brain Activity Into Speech',
             votes: 53,
             showMore: false,
+            hasVoted: false,
             body: `Scientists are getting closer to developing a computer-generated tool to allow people with severe speech impairments — like the late cosmologist Stephen Hawking — to communicate verbally.
             In a paper published today in the journal Nature, a team of researchers at the University of California San Francisco (UCSF) report that they’re working on an early computerized system that can decode brain signals from movements made while speaking, and then translate those movements into sounds. The authors said in a press briefing that the study is a proof of principle that it’s possible to synthesize speech by reading brain activity. "It's been a long-standing goal of our lab to create technologies to restore communications for people with severe speech disability," says co-author Dr. Edward Chang, a neurosurgeon at UCSF.`,
             comments: [
@@ -73,6 +75,7 @@ export const INITIAL_STATE: StoreState = {
             title: 'Why ‘Anonymized Data’ Isn’t So Anonymous',
             votes: 120,
             showMore: false,
+            hasVoted: false,
             body: `2015, Latanya Sweeney, a researcher who studies data anonymization and privacy, published research specifically targeting the deanonymization of HIPAA-protected data in Washington. In that state, (and many others), it is possible for companies and individuals to purchase anonymized medical record data. Sweeney purchased data through legal channels that included, as she noted, “virtually all hospitalizations occurring in the state in a given year” and myriad details about those hospital visits, including diagnoses, procedures, the attending physician, a summary of charges, how the bill was paid, and more. The records were anonymous in that they did not contain the patients’ name or address, but they did include patients’ five-digit U.S. postal codes.`,
             comments: [
                 {
@@ -104,6 +107,7 @@ export const INITIAL_STATE: StoreState = {
             title: 'Check out this Article I found!',
             votes: 120,
             showMore: false,
+            hasVoted: false,
             body: `https://techcrunch.com/2019/04/24/microsoft-beats-expectations-with-30-6b-in-revenue-as-azures-growth-continues/`,
             comments: [
                 {
