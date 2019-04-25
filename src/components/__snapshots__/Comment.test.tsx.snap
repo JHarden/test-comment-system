@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Comment component test 1`] = `
+<div
+  style={
+    Object {
+      "color": "green",
+      "outline": "1px solid green",
+    }
+  }
+>
+  <div>
+    john
+  </div>
+  <div>
+    this is a comment!
+  </div>
+  <div>
+    yesterday
+  </div>
+</div>
+`;
+
+exports[`RaceSelector component test 1`] = `
+<div
+  style={
+    Object {
+      "color": "green",
+      "outline": "1px solid green",
+    }
+  }
+>
+  <div>
+    john
+  </div>
+  <div>
+    this is a comment!
+  </div>
+  <div>
+    yesterday
+  </div>
+</div>
+`;

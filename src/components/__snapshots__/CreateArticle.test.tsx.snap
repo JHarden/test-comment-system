@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Create Article component test 1`] = `
+<div
+  style={
+    Object {
+      "color": "blue",
+      "outline": "1px solid blue",
+    }
+  }
+>
+  <input
+    name="title"
+    onChange={[Function]}
+    type="text"
+  />
+  <div>
+    <textarea
+      name="body"
+      onChange={[Function]}
+    />
+  </div>
+  <button
+    onClick={[Function]}
+  >
+    Submit
+  </button>
+</div>
+`;
+
+exports[`RaceSelector component test 1`] = `
+<div
+  style={
+    Object {
+      "color": "blue",
+      "outline": "1px solid blue",
+    }
+  }
+>
+  <input
+    name="title"
+    onChange={[Function]}
+    type="text"
+  />
+  <div>
+    <textarea
+      name="body"
+      onChange={[Function]}
+    />
+  </div>
+  <button
+    onClick={[Function]}
+  >
+    Submit
+  </button>
+</div>
+`;

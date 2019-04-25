@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainContent component test 1`] = `
+<div>
+  <div>
+    <button
+      onClick={[Function]}
+    >
+      Create Article
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Vote component test 1`] = `
+<div
+  style={
+    Object {
+      "color": "purple",
+      "outline": "1px solid purple",
+    }
+  }
+>
+  <div
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "red",
+        "height": "30px",
+        "width": "30px",
+      }
+    }
+  >
+     VOTE 
+  </div>
+  <div>
+    12
+  </div>
+</div>
+`;

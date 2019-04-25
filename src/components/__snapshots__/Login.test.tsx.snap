@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Create Comment component test 1`] = `
+<div
+  style={
+    Object {
+      "color": "green",
+      "outline": "1px solid green",
+    }
+  }
+>
+  <input
+    onChange={[Function]}
+    type="text"
+  />
+  <button
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`Login component test 1`] = `
+<div>
+  <p>
+    Login
+  </p>
+  <input
+    onChange={[Function]}
+    type="text"
+  />
+  <button
+    onClick={[Function]}
+  >
+    click me
+  </button>
+</div>
+`;
