@@ -4,15 +4,17 @@ import { StoreState } from '../types/index';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
-export function mapStateToProps( {userName, articles}: StoreState) {
+export function mapStateToProps( {userName, articles, isCreatingArticle}: StoreState) {
     return {
         userName,
-        articles
+        articles,
+        isCreatingArticle
     }
 }
 
-export function mapDispatchToProps(dispatch: Dispatch<actions.GetArticles>) {
+export function mapDispatchToProps(dispatch: Dispatch) {
     return {
+        onClickArticleCreate: (value: boolean)=> dispatch(actions.ToggleAddArticle(value)),
         onGetArticles: ()=> dispatch(actions.GetArticles())
     }
 }

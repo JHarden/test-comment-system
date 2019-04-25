@@ -1,6 +1,7 @@
 export interface StoreState {
     userName: string | undefined;
     articles: IArticle[];
+    isCreatingArticle: boolean;
 };
 
 export interface IArticle {

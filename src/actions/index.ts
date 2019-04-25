@@ -20,6 +20,17 @@ export interface AddComment {
     text: string,
     date: string
 }
+export interface AddArticle {
+    type: constants.ADD_ARTICLE,
+    author: string,
+    title: string,
+    body: string,
+    date: string
+}
+export interface ToggleAddArticle {
+    type: constants.TOGGLE_ADD_ARTICLE,
+    isCreatingArticle: boolean;
+}
 
 export type LoginAction = Login;
 export type GetArticlesAction = GetArticles;
@@ -53,5 +64,22 @@ export function AddComment(articleId: number, author: string, text: string, date
         author,
         text,
         date
+    }
+}
+
+export function AddArticle(author: string, title: string, body: string, date: string): AddArticle {
+    return {
+        type: constants.ADD_ARTICLE,
+        author,
+        title,
+        body,
+        date
+    }
+}
+
+export function ToggleAddArticle(isCreatingArticle: boolean): ToggleAddArticle {
+    return {
+        type: constants.TOGGLE_ADD_ARTICLE,
+        isCreatingArticle
     }
 }

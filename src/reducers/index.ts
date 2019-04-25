@@ -1,11 +1,13 @@
 import { StoreState } from "../types";
 import { LoginAction } from "../actions";
-import { LOGIN, SHOW_MORE, ADD_COMMENT } from "../constants";
+import { LOGIN, SHOW_MORE, ADD_COMMENT, TOGGLE_ADD_ARTICLE, ADD_ARTICLE } from "../constants";
 
 export function reducers(state: StoreState, action: any) {
     switch (action.type) {
         case LOGIN:
             return { ...state, userName: action.userName };
+        case TOGGLE_ADD_ARTICLE:
+            return { ...state, isCreatingArticle: action.isCreatingArticle };
         case SHOW_MORE:
             return {
                 ...state, articles: state.articles.map((_article, idx) => {
@@ -14,13 +16,24 @@ export function reducers(state: StoreState, action: any) {
                 })
             };
         case ADD_COMMENT:
-            console.log('add comment', action);
             return {
                 ...state, articles: state.articles.map((_article, idx) => {
                    return  _article.id === action.articleId ? 
                         { ..._article, comments: [..._article.comments, {author: action.author, date: action.date, text: action.text}]}
                         : _article
                 })
+            };
+        case ADD_ARTICLE:
+            return {
+                ...state, articles: [...state.articles,     {
+                    id: state.articles.length+1, 
+                    author: action.author, 
+                    title: action.title, 
+                    body: action.body, 
+                    date: action.date, 
+                    votes: action.vodes,
+                    comments: []
+                }]
             };
         default:
             return { ...state }

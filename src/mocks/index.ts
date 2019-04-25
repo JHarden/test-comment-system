@@ -1,7 +1,7 @@
 import { StoreState } from "../types";
 
 export const INITIAL_STATE: StoreState = {
-
+    isCreatingArticle: false,
     userName: undefined,
     articles: [
         {
