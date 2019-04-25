@@ -23,7 +23,6 @@ export function mapStateToProps( {articles} : StoreState, ownProps: OwnProps) {
 export function mapDispatchToProps(dispatch: Dispatch<actions.ShowMore>) {
     return {
         onShowMore: (value: boolean, id: number)=> dispatch(actions.ShowMore(value, id))
-        // onCreateComment: ()=> dispatch(actions.ShowMore()),
     }
 }
 

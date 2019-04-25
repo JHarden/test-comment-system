@@ -10,7 +10,8 @@ const StyledComment = styled.div`
     min-height: 80px;
     display: flex;
     padding: 0 0 0 20px;
-    `
+`;
+
 const CommentBody = styled.div`
     display: flex;
     flex-direction: row;
@@ -18,7 +19,6 @@ const CommentBody = styled.div`
     align-items: flex-start;
     width: 80%;
     text-align: left;
-    
 `;
 
 const CommentButton = styled.button`
@@ -48,16 +48,11 @@ class CreateComment extends React.Component<CommentProps, {}> {
         this.props.onShowComment(this.text, new Date().toString())
     }
 
-    private handleChange = (event: React.FormEvent<HTMLInputElement>) => {
-        this.text = event.currentTarget.value;
-    }
-
     render() {
-
         return (
             <StyledComment>
                 <CommentBody>
-                    <CommentInput type='text' placeholder={'write comment...'} onChange={this.handleChange}></CommentInput>
+                    <CommentInput type='text' placeholder={'write comment...'} onChange={(e) =>this.text = e.currentTarget.value}></CommentInput>
                     <CommentButton onClick={this.onSubmit}>send</CommentButton>
                 </CommentBody>
             </StyledComment>

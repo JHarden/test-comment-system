@@ -24,7 +24,7 @@ export function reducers(state: StoreState, action: any) {
             };
         case ADD_ARTICLE:
             return {
-                ...state, articles: [...state.articles,     {
+                ...state, isCreatingArticle: false, articles: [...state.articles,     {
                     id: state.articles.length+1, 
                     author: action.author, 
                     title: action.title, 

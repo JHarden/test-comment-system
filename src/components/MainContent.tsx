@@ -47,9 +47,6 @@ const CreateArticleWrapper = styled.div`
 `;
 class MainContent extends React.Component<MainContentProps, {}> {
 
-    private title: string = '';
-    private body: string = '';
-
     private renderCreateArticle = () => {
         return this.props.userName ? <CreateArticleButtonWrapper>
             <CreateArticleButton onClick={this.onClickArticleCreate}>New Article +</CreateArticleButton>

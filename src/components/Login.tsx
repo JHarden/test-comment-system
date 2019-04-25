@@ -51,10 +51,6 @@ class Login extends React.Component<LoginProps, {}> {
         this.props.onLogin(this.userName);
     }
 
-    private handleChange = (event: React.FormEvent<HTMLInputElement>) => {
-        this.userName = event.currentTarget.value;
-    }
-
     render() {
         const { userName } = this.props;
         return (
@@ -63,7 +59,7 @@ class Login extends React.Component<LoginProps, {}> {
                     userName ?
                         <WelcomeMessage>Hello {userName}</WelcomeMessage> :
                         <div>
-                            <StyledLoginInput type='text' onChange={this.handleChange}></StyledLoginInput>
+                            <StyledLoginInput type='text' onChange={(e) => this.userName = e.currentTarget.value}></StyledLoginInput>
                             <LoginButton onClick={this.handleLogin}>login</LoginButton>
                         </div>
                 }

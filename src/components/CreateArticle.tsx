@@ -54,27 +54,19 @@ const SubmitArticleButton = styled.button`
 
 class CreateArticle extends React.Component<CreateArticleProps, {}> {
 
-    private title: string = '';
-    private body: string = '';
+    private title = '';
+    private body = '';
 
     private onSubmit = () => {
         const date = new Date().toLocaleString();
         this.props.onCreateArticle(this.title, this.body, date);
     }
 
-    private handleTitleChange = (event: React.FormEvent<HTMLInputElement>) => {
-        this.title = event.currentTarget.value;
-    }
-
-    private handleBodyChange = (event: React.FormEvent<HTMLTextAreaElement>) => {
-        this.body = event.currentTarget.value;
-    }
-
     render() {
         return(
             <StyledArticle>  
-                <StyledArticleInput type='text' name='title' placeholder={'enter a title...'}onChange={this.handleTitleChange}></StyledArticleInput>
-                <StyledTextArea name='body' placeholder={'enter some text...'} onChange={this.handleBodyChange}></StyledTextArea>
+                <StyledArticleInput type='text' name='title' placeholder={'enter a title...'}onChange={(e) => this.title = e.currentTarget.value}></StyledArticleInput>
+                <StyledTextArea name='body' placeholder={'enter some text...'} onChange={(e) => this.body = e.currentTarget.value}></StyledTextArea>
                 <SubmitArticleButton onClick={this.onSubmit}>Submit</SubmitArticleButton>
             </StyledArticle>
         )

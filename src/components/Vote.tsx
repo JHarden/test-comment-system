@@ -6,7 +6,7 @@ export interface VotesProps {
     votes: number;
     onVote: (votes: number) => void;
     hasVoted: boolean;
-}
+};
 
 const BlueArrow = styled.div`
     width: 0;
@@ -14,15 +14,15 @@ const BlueArrow = styled.div`
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-bottom: 20px solid #4ca4ff;
-`
+`;
+
 const GreyArrow = styled.div`
     width: 0;
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-bottom: 20px solid grey;
-
-`
+`;
 
 const VoteWrapper = styled.div`
     width: 70px;
@@ -37,15 +37,11 @@ const VoteWrapper = styled.div`
         padding-top: 10px;
         font-weight: bold;
     }
-
-`
+`;
 
 class Vote extends React.Component<VotesProps, {}> {
-
-    private handleOnClick = () => {
-        this.props.isLoggedIn && !this.props.hasVoted && this.props.onVote(this.props.votes + 1);
-    }
-
+    private handleOnClick = () => this.props.isLoggedIn && !this.props.hasVoted && this.props.onVote(this.props.votes + 1);
+    
     render() {
         const { votes, hasVoted } = this.props;
         return (

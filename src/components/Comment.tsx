@@ -12,8 +12,6 @@ const StyledComment = styled.div`
     display: flex;
     padding: 20px 0 0 20px;
     `
-
-
 const Avatar = styled.div`
     width: 50px;
     height: 50px;
@@ -28,7 +26,6 @@ const CommentBody = styled.div`
     align-items: flex-start;
     max-width: 80%;
     text-align: left;
-    
 `;
 
 const CommentText = styled.div`

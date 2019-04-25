@@ -41,13 +41,14 @@ const CommentListWrapper = styled.div`
     display: flex;
     justify-content: flex-end;
     margin-right: 20px;
-`
+`;
+
 const BodyContent = styled.p`
     padding: 10px 20px 20px;
     text-align: left;
     line-height: 1.5;
     margin-top: 0;
-`
+`;
 
 const ArticleHeader = styled.div`
     font-weight: normal;
@@ -70,7 +71,8 @@ const CommentList = styled.div`
     font-size: 14px;
     padding-bottom: 10px;
     justify-content: flex-end;
-`
+`;
+
 class ReadOnlyArticle extends React.Component<ReadOnlyArticleProps, ReadOnlyUIState> {
 
     private toggle = () => {
@@ -98,19 +100,18 @@ class ReadOnlyArticle extends React.Component<ReadOnlyArticleProps, ReadOnlyUISt
                         <h2>{title}</h2>
                     </ArticleHeader>
                 </FlexContainer>
-                <CommentListWrapper>                    
+                <CommentListWrapper>
                     <CommentList>{comments.length} comments</CommentList>
                 </CommentListWrapper>
-                {
-                    showMore ?
+                {showMore ?
+                    <div>
+                        <BodyContent>
+                            {body}
+                        </BodyContent>
                         <div>
-                            <BodyContent>
-                                {body}
-                            </BodyContent>
-                            <div>
-                                {this.getComments()}
-                            </div>
-                        </div> : ''
+                            {this.getComments()}
+                        </div>
+                    </div> : ''
                 }
             </StyledArticle>
         )
