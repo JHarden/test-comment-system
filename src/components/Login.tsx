@@ -1,9 +1,14 @@
 import React from "react";
+import styled from "styled-components";
 
 export interface LoginProps {
     userName: string | undefined;
     onLogin: (value: string) => void;
 }
+
+const StyledLogin = styled.div`
+    background: #dedcdc;
+`;
 
 class Login extends React.Component<LoginProps, {}> {
 
@@ -18,12 +23,20 @@ class Login extends React.Component<LoginProps, {}> {
     }
 
     render() {
-        return(
-            <div> 
-                <p>Login</p>
-                <input type='text' onChange={this.handleChange}></input>
-                <button onClick={this.handleLogin}>click me</button>
-            </div>
+        const { userName } = this.props;
+        return (
+            <StyledLogin>
+                {
+                    userName ?
+                        <div>Hello {userName}
+                        </div> :
+                        <div>
+                            <p>Login</p>
+                            <input type='text' onChange={this.handleChange}></input>
+                            <button onClick={this.handleLogin}>click me</button>
+                        </div>
+                }
+            </StyledLogin>
         )
     }
 }

@@ -1,11 +1,9 @@
 import React from "react";
 import { IArticle } from "../types";
-import ReadOnlyArticle from "./ReadOnlyArticle";
 import ReadOnlyArticleContainer from "../containers/ReadOnlyArticleContainer";
-import CreateComment from "./CreateComment";
 import CreateCommentContainer from "../containers/CreateCommentContainer";
-import CreateArticle from "./CreateArticle";
 import CreateArticleContainer from "../containers/CreateArticleContainer";
+import styled from "styled-components";
 
 export interface MainContentProps {
     userName: string | undefined;
@@ -15,6 +13,12 @@ export interface MainContentProps {
     onClickArticleCreate: (value: boolean) => void;
 }
 
+const StyledMainContent = styled.div`
+    background: #dedcdc;
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+    padding-top: 10px;
+`;
 class MainContent extends React.Component<MainContentProps, {}> {
 
     private title: string = '';
@@ -38,40 +42,37 @@ class MainContent extends React.Component<MainContentProps, {}> {
         const { userName, articles } = this.props;
 
         return (
-            <div>
+            <StyledMainContent>
                 {
                     articles.map((article, index) => {
                         return (
                             <div>
-                                <div>
-                                    <ReadOnlyArticleContainer
-                                        id={article.id}
-                                        author={article.author}
-                                        title={article.title}
-                                        body={article.body}
-                                        votes={article.votes}
-                                        showMore={article.showMore}
-                                        hasVoted={article.hasVoted}
-                                        comments={article.comments}
-                                        key={index}>
-                                    </ReadOnlyArticleContainer>
-                                    {article.showMore && userName ? <CreateCommentContainer author={userName} articleId={article.id}></CreateCommentContainer> : null}
-                                </div>
+                                <ReadOnlyArticleContainer
+                                    isLoggedIn={userName ? true : false}
+                                    id={article.id}
+                                    author={article.author}
+                                    title={article.title}
+                                    body={article.body}
+                                    votes={article.votes}
+                                    showMore={article.showMore}
+                                    hasVoted={article.hasVoted}
+                                    comments={article.comments}
+                                    key={index}>
+                                </ReadOnlyArticleContainer>
+                                {article.showMore && userName ? <CreateCommentContainer author={userName} articleId={article.id}></CreateCommentContainer> : null}
                             </div>
                         )
                     })
                 }
                 {this.renderCreateArticle()}
-                { this.props.isCreatingArticle ? 
-                <div>
-                                    TESTINNNNNG
-
-                    <CreateArticleContainer author={userName}>
-                    </CreateArticleContainer>
-                </div>
-                : null
+                {this.props.isCreatingArticle ?
+                    <div>
+                        <CreateArticleContainer author={userName}>
+                        </CreateArticleContainer>
+                    </div>
+                    : null
                 }
-            </div>
+            </StyledMainContent>
         )
     }
 }

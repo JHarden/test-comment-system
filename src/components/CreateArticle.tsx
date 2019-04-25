@@ -1,13 +1,14 @@
 import React from "react";
+import styled from "styled-components";
 
 export interface CreateArticleProps {
     onCreateArticle: (title: string, body: string, date: string) => void;
 }
 
-const style = {
-    outline: '1px solid blue',
-    color: 'blue'
-}
+const StyledArticle = styled.div`
+    background: white;
+`;
+
 class CreateArticle extends React.Component<CreateArticleProps, {}> {
 
     private title: string = '';
@@ -28,13 +29,13 @@ class CreateArticle extends React.Component<CreateArticleProps, {}> {
 
     render() {
         return(
-            <div style={style}>  
+            <StyledArticle>  
                 <input type='text' name='title' onChange={this.handleTitleChange}></input>
                 <div>
                     <textarea name='body' onChange={this.handleBodyChange}></textarea>
                 </div>
                 <button onClick={this.onSubmit}>Submit</button>
-            </div>
+            </StyledArticle>
         )
     }
 }

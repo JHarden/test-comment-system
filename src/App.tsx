@@ -6,8 +6,10 @@ import MainContentContainer from './containers/MainContentContainer';
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Login></Login>
-      <MainContentContainer></MainContentContainer>
+      <div className="AppWrapper">
+        <Login></Login>
+        <MainContentContainer></MainContentContainer>
+      </div>
     </div>
   );
 }
