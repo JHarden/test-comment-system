@@ -76,7 +76,7 @@ class MainContent extends React.Component<MainContentProps, {}> {
     }
 
     render() {
-        const { userName, articles } = this.props;
+        const { userName } = this.props;
 
         return (
             <div>

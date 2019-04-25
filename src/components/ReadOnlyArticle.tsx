@@ -1,8 +1,6 @@
 import React from "react";
 import Comment from "./Comment";
 import { IComment } from "../types";
-import CreateComment from "./CreateComment";
-import Vote from "./Vote";
 import VoteContainer from "../containers/VoteContainer";
 import styled from "styled-components";
 

@@ -2,47 +2,23 @@
 
 exports[`Create Comment component test 1`] = `
 <div
-  style={
-    Object {
-      "color": "green",
-      "outline": "1px solid green",
-    }
-  }
+  className="sc-bdVaJa hFJNoX"
 >
-  <input
-    onChange={[Function]}
-    type="text"
-  />
-  <button
-    onClick={[Function]}
-  />
-</div>
-`;
-
-exports[`RaceSelector component test 1`] = `
-<div
-  style={
-    Object {
-      "color": "blue",
-      "outline": "1px solid blue",
-    }
-  }
->
-  <input
-    name="title"
-    onChange={[Function]}
-    type="text"
-  />
-  <div>
-    <textarea
-      name="body"
-      onChange={[Function]}
-    />
-  </div>
-  <button
-    onClick={[Function]}
+  <div
+    className="sc-bwzfXH bAxVqF"
   >
-    Submit
-  </button>
+    <input
+      className="sc-bxivhb ZaSla"
+      onChange={[Function]}
+      placeholder="write comment..."
+      type="text"
+    />
+    <button
+      className="sc-htpNat fNeiqx"
+      onClick={[Function]}
+    >
+      send
+    </button>
+  </div>
 </div>
 `;

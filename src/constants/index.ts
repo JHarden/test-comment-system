@@ -1,4 +1,3 @@
-import { StoreState } from "../types";
 
 export const LOGIN = 'LOGIN';
 export type LOGIN = typeof LOGIN;

@@ -5,27 +5,12 @@ export interface CommentProps {
     onShowComment: (text: string, date: string) => void;
 }
 
-const commentStyle = {
-    color: 'green',
-    outline: '1px solid green'
-}
-
-
 const StyledComment = styled.div`
     background: #dedcdc;
     min-height: 80px;
     display: flex;
     padding: 0 0 0 20px;
     `
-
-
-const Avatar = styled.div`
-    width: 50px;
-    height: 50px;
-    background: grey;
-    border-radius: 50%;
-`;
-
 const CommentBody = styled.div`
     display: flex;
     flex-direction: row;

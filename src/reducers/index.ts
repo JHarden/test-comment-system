@@ -1,5 +1,4 @@
 import { StoreState } from "../types";
-import { LoginAction } from "../actions";
 import { LOGIN, SHOW_MORE, ADD_COMMENT, TOGGLE_ADD_ARTICLE, ADD_ARTICLE, VOTE } from "../constants";
 
 export function reducers(state: StoreState, action: any) {
