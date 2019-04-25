@@ -4,11 +4,13 @@ export interface StoreState {
 };
 
 export interface IArticle {
+    id: number;
     author: string;
     date: string;
     title: string;
     body: string;
     votes: number;
+    showMore: boolean;
     comments: IComment[];
 }
 

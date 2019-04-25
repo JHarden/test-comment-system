@@ -1,8 +1,12 @@
 import React from "react";
 import { IArticle } from "../types";
 import ReadOnlyArticle from "./ReadOnlyArticle";
+import ReadOnlyArticleContainer from "../containers/ReadOnlyArticleContainer";
+import CreateComment from "./CreateComment";
+import CreateCommentContainer from "../containers/CreateCommentContainer";
 
 export interface MainContentProps {
+    userName: string | undefined;
     articles: IArticle[];
     onGetArticles: () => void;
 
@@ -18,20 +22,27 @@ class MainContent extends React.Component<MainContentProps, {}> {
     }
 
     render() {
-        const { articles } = this.props;
+        const { userName, articles } = this.props;
 
-        console.log('articles: ', articles);
-        return(
-            <div>  
+        return (
+            <div>
                 {
                     articles.map((article, index) => {
-                        return <ReadOnlyArticle
-                                    author={article.author}
-                                    title={article.title}
-                                    body={article.body}
-                                    votes={article.votes}
-                                    key={index}>
-                                </ReadOnlyArticle>
+                        return (
+                        <div>
+                            <ReadOnlyArticleContainer
+                                id={article.id}
+                                author={article.author}
+                                title={article.title}
+                                body={article.body}
+                                votes={article.votes}
+                                showMore={article.showMore}
+                                comments={article.comments}
+                                key={index}>
+                            </ReadOnlyArticleContainer>
+                            {article.showMore && userName? <CreateCommentContainer author={userName} articleId={article.id}></CreateCommentContainer> : null }
+                        </div>
+                        )
                     })
                 }
             </div>

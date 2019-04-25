@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import { createStore } from 'redux';
-import { doLogin } from './reducers/index';
+import { reducers } from './reducers/index';
 import { Provider } from 'react-redux';
 import { LoginAction } from './actions';
 import { INITIAL_STATE } from './mocks';
@@ -15,7 +15,7 @@ declare var window: any;
 const initialState = INITIAL_STATE;
 
 const store = createStore<LoginAction, any, any, any>(
-    doLogin as any,
+    reducers as any,
     initialState as any,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );

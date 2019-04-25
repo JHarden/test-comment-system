@@ -4,8 +4,9 @@ import { StoreState } from '../types/index';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
-export function mapStateToProps({articles}: StoreState) {
+export function mapStateToProps( {userName, articles}: StoreState) {
     return {
+        userName,
         articles
     }
 }
